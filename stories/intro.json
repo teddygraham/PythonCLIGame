@@ -1,0 +1,56 @@
+{
+  "title": "PyAdventure: Learn Python Through Adventure",
+  "description": "A beginner-friendly adventure game for learning Python",
+  "scenes": [
+    {
+      "id": "intro",
+      "title": "Welcome to PyAdventure!",
+      "description": "You find yourself in a mysterious digital world where Python code is the key to survival. Your journey begins here.",
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Learn about variables",
+          "next_scene": "variables"
+        },
+        {
+          "text": "Explore the world",
+          "next_scene": "explore"
+        }
+      ]
+    },
+    {
+      "id": "variables",
+      "title": "The Variable Valley",
+      "description": "You enter a valley where data flows like rivers. To cross safely, you must understand variables.",
+      "type": "challenge",
+      "code_example": "name = 'adventurer'\nage = 25\nprint(f'Hello, {name}! You are {age} years old.')",
+      "challenge": {
+        "prompt": "Create a variable called 'message' and set it to 'Hello, Python!'",
+        "expected_output": "Hello, Python!",
+        "hint": "Use the assignment operator (=) to create a variable"
+      }
+    },
+    {
+      "id": "explore",
+      "title": "The Coding Forest",
+      "description": "You venture into a forest where the trees whisper secrets of programming.",
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Listen to the trees",
+          "next_scene": "end"
+        },
+        {
+          "text": "Go back to the beginning",
+          "next_scene": "intro"
+        }
+      ]
+    },
+    {
+      "id": "end",
+      "title": "Your Adventure Continues...",
+      "description": "This is just the beginning of your Python adventure. More challenges await!",
+      "type": "ending"
+    }
+  ]
+}
