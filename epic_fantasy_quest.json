@@ -1,0 +1,312 @@
+{
+  "title": "Epic Fantasy Quest – Python Learning Journey",
+  "description": "Embark on a classic Hero’s Journey while mastering Python fundamentals. Narrative choice scenes branch the story; challenge scenes ask the player to write or reason about code.",
+  "scenes": [
+
+    /* --- ORIGINAL SCENES FROM PDF --- */
+    {
+      "id": "call_to_adventure",
+      "title": "Call to Adventure",
+      "type": "choice",
+      "description": "You are a humble villager in Greenvale … Will you heed the call?",
+      "choices": [
+        { "text": "Gather your courage and accept the quest.", "next_scene": "journey_begin" },
+        { "text": "Refuse, insisting you cannot be the chosen one.", "next_scene": "refusal_consequence" }
+      ]
+    },
+
+    {
+      "id": "refusal_consequence",
+      "title": "The Consequence of Refusal",
+      "type": "choice",
+      "description": "That night, Malachar’s minions burn the village … Eldrin dies protecting innocents.",
+      "choices": [
+        { "text": "Take up the quest at last, driven by regret and resolve.", "next_scene": "journey_begin" },
+        { "text": "Run away and forsake the realm to darkness.", "next_scene": "ending_darkness" }
+      ]
+    },
+
+    {
+      "id": "journey_begin",
+      "title": "Departure",
+      "type": "choice",
+      "description": "With dawn’s first light you set out from Greenvale …",
+      "choices": [
+        { "text": "Continue into the Murkwood Forest", "next_scene": "road_encounter" }
+      ]
+    },
+
+    {
+      "id": "road_encounter",
+      "title": "An Unexpected Encounter",
+      "type": "choice",
+      "description": "Deeper in Murkwood you spot a warrior beset by goblins …",
+      "choices": [
+        { "text": "Rush out and help the warrior fight off the creatures.", "next_scene": "ally_join" },
+        { "text": "Stay hidden and slip away quietly, leaving her to her fate.", "next_scene": "continue_alone" }
+      ]
+    },
+
+    {
+      "id": "ally_join",
+      "title": "A New Ally",
+      "type": "choice",
+      "description": "You and Lira defeat the goblins. She pledges to aid you.",
+      "choices": [
+        { "text": "Continue your journey with Lira.", "next_scene": "crossroad_with_ally" }
+      ]
+    },
+
+    {
+      "id": "continue_alone",
+      "title": "Onward Alone",
+      "type": "choice",
+      "description": "You abandon the wounded warrior and press on alone.",
+      "choices": [
+        { "text": "Press onward through the forest alone.", "next_scene": "crossroad_alone" }
+      ]
+    },
+
+    {
+      "id": "crossroad_with_ally",
+      "title": "Crossroads (With Ally)",
+      "type": "choice",
+      "description": "You and Lira reach a fork: north to the Temple, east to Malachar’s fortress.",
+      "choices": [
+        { "text": "Travel north to the Temple of Dawn to retrieve the Sword of Light.", "next_scene": "temple_with_ally" },
+        { "text": "Take the eastern path straight to Malachar's fortress, without the Sword.", "next_scene": "fortress_with_ally" }
+      ]
+    },
+
+    {
+      "id": "crossroad_alone",
+      "title": "Crossroads (Alone)",
+      "type": "choice",
+      "description": "Alone at the crossroads you decide: temple or fortress?",
+      "choices": [
+        { "text": "Journey to the Temple of Dawn to find the Sword of Light.", "next_scene": "temple_alone" },
+        { "text": "Head directly to Malachar's fortress without the Sword.", "next_scene": "fortress_alone" }
+      ]
+    },
+
+    {
+      "id": "temple_with_ally",
+      "title": "Temple of Dawn (With Ally)",
+      "type": "choice",
+      "description": "You and Lira claim the Sword of Light.",
+      "choices": [
+        { "text": "Descend the mountain and march to Malachar's fortress.", "next_scene": "final_with_ally_artifact" }
+      ]
+    },
+
+    {
+      "id": "fortress_with_ally",
+      "title": "Malachar's Fortress (With Ally, No Sword)",
+      "type": "choice",
+      "description": "You infiltrate the fortress without the Sword.",
+      "choices": [
+        { "text": "Confront the Dark Sorcerer Malachar.", "next_scene": "final_with_ally_noartifact" }
+      ]
+    },
+
+    {
+      "id": "temple_alone",
+      "title": "Temple of Dawn (Alone)",
+      "type": "choice",
+      "description": "You draw the Sword of Light in solitude.",
+      "choices": [
+        { "text": "Climb down the mountain and confront Malachar.", "next_scene": "final_alone_artifact" }
+      ]
+    },
+
+    {
+      "id": "fortress_alone",
+      "title": "Malachar's Fortress (Alone, No Sword)",
+      "type": "choice",
+      "description": "You sneak into Malachar’s hall weapon‑less.",
+      "choices": [
+        { "text": "Confront the Dark Sorcerer Malachar.", "next_scene": "final_alone_noartifact" }
+      ]
+    },
+
+    {
+      "id": "final_with_ally_artifact",
+      "title": "Confrontation with Malachar (Ally + Sword)",
+      "type": "choice",
+      "description": "Sword of Light in hand, Lira at your side … a final temptation looms.",
+      "choices": [
+        { "text": "Fulfill the prophecy and destroy Malachar, using the Sword only for justice.", "next_scene": "ending_good_ally" },
+        { "text": "Seize Malachar's dark power for yourself.", "next_scene": "ending_darklord_ally" }
+      ]
+    },
+
+    {
+      "id": "final_with_ally_noartifact",
+      "title": "Confrontation with Malachar (Ally, No Sword)",
+      "type": "choice",
+      "description": "Outmatched, you and Lira must make a desperate choice.",
+      "choices": [
+        { "text": "Strike while Lira sacrifices herself.", "next_scene": "ending_bitter_victory" },
+        { "text": "Refuse to let Lira die alone; charge together.", "next_scene": "ending_defeat_ally" }
+      ]
+    },
+
+    {
+      "id": "final_alone_artifact",
+      "title": "Confrontation with Malachar (Alone + Sword)",
+      "type": "choice",
+      "description": "Alone with the Sword of Light, the final decision is yours.",
+      "choices": [
+        { "text": "Finish Malachar and purge his evil, remaining a true hero.", "next_scene": "ending_good_alone" },
+        { "text": "Embrace the darkness and take Malachar’s place.", "next_scene": "ending_darklord_alone" }
+      ]
+    },
+
+    {
+      "id": "final_alone_noartifact",
+      "title": "Confrontation with Malachar (Alone, No Sword)",
+      "type": "choice",
+      "description": "Weapon‑less before Malachar’s might, you face defeat or submission.",
+      "choices": [
+        { "text": "Refuse to yield; attack one last time.", "next_scene": "ending_defeat_alone" },
+        { "text": "Bow to Malachar and swear loyalty.", "next_scene": "ending_join_villain" }
+      ]
+    },
+
+    { "id": "ending_darkness",        "title": "Darkness Prevails",        "type": "ending", "description": "By never answering the call, the world falls to shadow." },
+    { "id": "ending_good_ally",       "title": "A New Dawn",               "type": "ending", "description": "With Lira, you slay Malachar and usher in an era of light." },
+    { "id": "ending_good_alone",      "title": "Prophecy Fulfilled",       "type": "ending", "description": "Alone you defeat Malachar and restore hope." },
+    { "id": "ending_darklord_ally",   "title": "A Dark Reign Begins",      "type": "ending", "description": "You claim Malachar's power; the realm trades one tyrant for another." },
+    { "id": "ending_darklord_alone",  "title": "A Dark Reign Begins",      "type": "ending", "description": "Power corrupts: you ascend as a new Dark Lord." },
+    { "id": "ending_bitter_victory",  "title": "Victory at a Price",       "type": "ending", "description": "Malachar dies, but Lira’s sacrifice haunts your reign." },
+    { "id": "ending_defeat_ally",     "title": "Light Extinguished",       "type": "ending", "description": "Both you and Lira fall; darkness endures." },
+    { "id": "ending_defeat_alone",    "title": "Last Light Fades",         "type": "ending", "description": "Your lone stand fails; Malachar rules unopposed." },
+    { "id": "ending_join_villain",    "title": "Surrender to Darkness",    "type": "ending", "description": "You kneel to Malachar and become his puppet." },
+
+    /* --- NEW PYTHON‑LEARNING SCENES --- */
+    {
+      "id": "crossing_threshold",
+      "title": "Crossing the Threshold",
+      "type": "choice",
+      "description": "You leave Greenvale and reach a lonely crossroads. Three paths beckon.",
+      "choices": [
+        { "text": "Enter the Enchanted Forest", "next_scene": "enchanted_forest" },
+        { "text": "Climb the Mountain Path",    "next_scene": "mountain_path" },
+        { "text": "Visit the Healer's Village", "next_scene": "healers_village" }
+      ]
+    },
+
+    {
+      "id": "enchanted_forest",
+      "title": "Enchanted Forest Ambush",
+      "type": "challenge",
+      "description": "A snarling goblin leaps from the shadows! Decide—fight or flee—using Python.",
+      "code_example": "choice = input('fight or flee? ')\nif choice == 'fight':\n    print('You brandish your weapon and attack!')\nelse:\n    print('You sprint away into the shadows!')",
+      "challenge": {
+        "prompt": "Write an if/else that prints 'Victory!' if the player types fight, else prints 'Escape!'.",
+        "expected_output": "Victory!",
+        "hint": "Use input() and compare with ==."
+      },
+      "choices": [
+        { "text": "Continue deeper (if you fought)", "next_scene": "inmost_cave" },
+        { "text": "Return to the crossroads (if you fled)", "next_scene": "crossing_threshold" }
+      ]
+    },
+
+    {
+      "id": "mountain_path",
+      "title": "Troll on the Pass",
+      "type": "challenge",
+      "description": "A hulking troll blocks the trail. Break its three stone shields with a loop, or retreat.",
+      "code_example": "shields = [1, 2, 3]\nfor s in shields:\n    print(f'You shatter shield {s}!')\nprint('The troll trembles in fear!')",
+      "challenge": {
+        "prompt": "Use a for‑loop to print 'Breaking shield X' for X = 1‑3, then 'Troll defeated!'.",
+        "expected_output": "Breaking shield 1\nBreaking shield 2\nBreaking shield 3\nTroll defeated!",
+        "hint": "Create a list [1,2,3] and iterate over it."
+      },
+      "choices": [
+        { "text": "Claim the Magic Stone and descend", "next_scene": "inmost_cave" },
+        { "text": "Retreat to the crossroads",         "next_scene": "crossing_threshold" }
+      ]
+    },
+
+    {
+      "id": "healers_village",
+      "title": "Healer’s Village",
+      "type": "choice",
+      "description": "Kind healers offer rest and a potion.",
+      "choices": [
+        { "text": "Accept the potion and rest", "next_scene": "inmost_cave" },
+        { "text": "Decline and continue on",    "next_scene": "inmost_cave" }
+      ]
+    },
+
+    {
+      "id": "inmost_cave",
+      "title": "Gate of Shadows",
+      "type": "choice",
+      "description": "A cyclopean gate bars entry to Malachar’s lair.",
+      "choices": [
+        { "text": "Use the Golden Key",        "next_scene": "ordeal" },
+        { "text": "Search elsewhere first",    "next_scene": "crossing_threshold" }
+      ]
+    },
+
+    {
+      "id": "ordeal",
+      "title": "Final Confrontation",
+      "type": "challenge",
+      "description": "Malachar towers before you! Break his shields with a loop, then strike.",
+      "code_example": "def strike():\n    print('You land a mighty blow!')\nshields = [1, 2, 3]\nfor s in shields:\n    print(f'Destroying shield {s}')\nstrike()",
+      "challenge": {
+        "prompt": "Define strike() that prints 'Critical hit!'. Loop over [1,2,3] printing 'Shield X shattered', then call strike().",
+        "expected_output": "Shield 1 shattered\nShield 2 shattered\nShield 3 shattered\nCritical hit!",
+        "hint": "Define the function first; call it after the loop."
+      },
+      "choices": [
+        { "text": "Seize the Elixir of Life", "next_scene": "reward_elixir" }
+      ]
+    },
+
+    {
+      "id": "reward_elixir",
+      "title": "The Elixir of Life",
+      "type": "choice",
+      "description": "A glowing vial rests on a pedestal amid the ruins.",
+      "choices": [
+        { "text": "Take the Elixir", "next_scene": "road_back" },
+        { "text": "Leave it behind", "next_scene": "road_back" }
+      ]
+    },
+
+    {
+      "id": "road_back",
+      "title": "Collapse of the Lair",
+      "type": "choice",
+      "description": "The fortress begins to crumble around you.",
+      "choices": [
+        { "text": "Sprint for the exit", "next_scene": "resurrection" },
+        { "text": "Move carefully",      "next_scene": "resurrection" }
+      ]
+    },
+
+    {
+      "id": "resurrection",
+      "title": "Resurrection",
+      "type": "choice",
+      "description": "Outside you collapse. Will you drink the Elixir or rely on sheer will?",
+      "choices": [
+        { "text": "Drink the Elixir",          "next_scene": "return_home" },
+        { "text": "Trust your own strength",   "next_scene": "return_home" }
+      ]
+    },
+
+    {
+      "id": "return_home",
+      "title": "Return with the Boon",
+      "type": "ending",
+      "description": "Back in Greenvale you are hailed a hero. Peace returns to the realm, and your story becomes legend."
+    }
+
+  ] /* end scenes array */
+}
